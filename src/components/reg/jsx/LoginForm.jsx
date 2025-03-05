@@ -8,7 +8,6 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Отправка формы
     console.log('Отправка формы:', { email, password });
   };
 
