@@ -1,6 +1,6 @@
 // import {Header} from './components/header/Header';
 import { Footer } from './components/footer/Footer';
-import { Reg } from './components/reg/jsx/App';
+import LoginForm from './components/reg/jsx/LoginForm';
 // import { Main } from './components/main/Main';
 // import {Exchanger} from './components/pages/Exchanger'
 
@@ -22,7 +22,7 @@ function App() {
           </Routes>
         </BrowserRouter> */}
         <Footer />
-        <Reg />
+        <LoginForm />
     </div>
   );
 }
