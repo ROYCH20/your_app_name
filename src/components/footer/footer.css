@@ -1,6 +1,14 @@
 @media (max-width: 480px) {
     .footer__menu{
-        justify-content: space-between;
+        justify-content: center;
         display: flex;
+    }
+
+    .menu__element{
+        margin-right: 80px;
+    }
+
+    .menu__element:last-child{
+        margin-right: 0px;
     }
 }
