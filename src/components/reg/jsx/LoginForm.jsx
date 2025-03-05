@@ -1,35 +1,50 @@
 import React, { useState } from 'react';
 import '../CSS/LoginForm.css';
 
-const LoginForm = ({ isVisible }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Отправка формы', { email, password });
+    // Отправка формы
+    console.log('Отправка формы:', { email, password });
   };
 
   return (
-    <div className={`login-container ${isVisible ? 'visible' : ''}`}>
+    <div className="login-form-container">
       <form onSubmit={handleSubmit} className="login-form">
+        <label htmlFor="email">EMAIL</label>
         <input
           type="email"
-          placeholder="EMAIL"
+          id="email"
+          placeholder="johndoe@email."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="login-input"
         />
-        <div className="password-container">
+
+        <label htmlFor="password">Пароль</label>
+        <div className="password-wrapper">
           <input
-            type="password"
-            placeholder="Пароль"
+            type={showPassword ? "text" : "password"}
+            id="password"
+            placeholder="********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="login-input"
           />
-          <span className="password-toggle">👁</span>
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="password-toggle-button"
+            aria-label={showPassword ? "Скрыть пароль" : "Показать пароль"}
+          >
+            {showPassword ? '👁️' : '🙈'}
+          </button>
         </div>
+
         <button type="submit" className="login-button">
           Войти
           <span className="arrow">→</span>
